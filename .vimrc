@@ -88,7 +88,7 @@ let g:syntastic_mode_map = { 'mode': 'active',
                            \ 'active_filetypes': ['python'],
                            \ 'passive_filetypes': ['scala'] }
 let g:syntastic_enable_signs=1
-let g:syntastic_python_checker_args="--ignore=E501 --max_complexity=12"
+let g:syntastic_python_checker_args="--ignore=E501 --max-complexity=12"
  
 set backspace=indent,eol,start
 
