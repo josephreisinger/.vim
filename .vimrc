@@ -77,6 +77,14 @@ set autoindent
 
 let mapleader = ","
 let localmapleader = ","
+
+" For syntastic
+let g:syntastic_check_on_open=0
+let g:syntastic_enable_highlighting = 1
+let g:syntastic_mode_map = { 'mode': 'active',
+                           \ 'active_filetypes': ['python'],
+                           \ 'passive_filetypes': ['scala'] }
+let g:syntastic_enable_signs=1
  
 set backspace=indent,eol,start
 
