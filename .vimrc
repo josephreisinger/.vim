@@ -33,6 +33,9 @@ cmap w!! %!sudo tee > /dev/null %
 " let g:ackprg="ack-grep -H --nocolor --nogroup --column"
 " nmap <leader>a <Esc>:Ack!
 
+" Restore the last line we were working on and also marks
+set viminfo='10,\"100,:20,%,n~/.viminfo 
+    au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif 
 
 let maplocalleader = ","
 
@@ -79,12 +82,13 @@ let mapleader = ","
 let localmapleader = ","
 
 " For syntastic
-let g:syntastic_check_on_open=0
+let g:syntastic_check_on_open=1
 let g:syntastic_enable_highlighting = 1
 let g:syntastic_mode_map = { 'mode': 'active',
                            \ 'active_filetypes': ['python'],
                            \ 'passive_filetypes': ['scala'] }
 let g:syntastic_enable_signs=1
+let g:syntastic_python_checker_args="--ignore=E501 --max_complexity=12"
  
 set backspace=indent,eol,start
 
