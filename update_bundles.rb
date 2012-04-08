@@ -30,6 +30,7 @@ git_bundles = [
   "git://github.com/derekwyatt/vim-scala.git",
   "git://github.com/Lokaltog/vim-powerline.git",
   "git://github.com/scrooloose/nerdcommenter.git",
+  "git://github.com/scrooloose/syntastic.git"
 ]
 
 vim_org_scripts = [

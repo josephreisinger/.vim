@@ -64,19 +64,6 @@ map <localleader>v :tabe ~/.vimrc<cr>:set noro<cr><c-l>
 map <localleader>V :so ~/.vimrc<cr>
 map <localleader>p :set invpaste \| set paste?<cr>
 
-
-" highlight StatusLineModified           term=bold,reverse cterm=bold,reverse ctermfg=15
-"highlight StatusLineModified           term=reverse,bold cterm=NONE ctermfg=255 ctermbg=197 
-"highlight StatusLineModifiedNC           term=reverse,bold cterm=NONE ctermfg=255 ctermbg=197
-"highlight StatusLinePreview            term=bold,reverse cterm=bold,reverse ctermfg=Blue   
-"highlight StatusLinePreviewNC          term=reverse      cterm=reverse      ctermfg=Blue    
-"highlight StatusLineReadonly           term=bold,reverse cterm=bold,reverse ctermfg=Grey    
-"highlight StatusLineReadonlyNC         term=reverse      cterm=reverse      ctermfg=Grey    
-"highlight StatusLineSpecial            term=bold,reverse cterm=bold,reverse ctermfg=DarkBlue
-"highlight StatusLineSpecialNC          term=reverse      cterm=reverse      ctermfg=DarkBlue
-"highlight StatusLineUnmodifiable       term=bold,reverse cterm=bold,reverse ctermfg=Grey    
-"highlight StatusLineUnmodifiableNC     term=reverse      cterm=reverse      ctermfg=Grey   
-
 set laststatus=2
 
 
@@ -84,10 +71,6 @@ set laststatus=2
 silent execute '!mkdir -p ~/.vim_backups'
 set backupdir=~/.vim_backups//
 set directory=~/.vim_backups//
-
-" dont remember what this does
-"set viminfo='10,\"100,:20,%,n~/.viminfo 
-    "au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif 
 
 " set paste
 set autoindent
@@ -136,7 +119,9 @@ set showcmd
 syntax enable
 syntax sync fromstart
 filetype on                          " try to detect filetypes
+filetype plugin on     " enables filetype specific plugins
 filetype plugin indent on
+
 
 let g:explVertical=1
 let g:explStartRight=1
@@ -151,35 +136,3 @@ if &diff
    set nowrap
 endif
 
-"NERDTree
-map <leader>n :NERDTreeToggle<CR>
-
-
-" emulate the output of :args in expression form (By DanB)
-"function BufferList ()
-"
-"  let i = 0
-"  let out = ''
-"
-"  while i < argc()
-"
-"    let current = argv( i )
-"
-"    " bracket the current buffer name
-"    if i == argidx()
-"      let current = '[' . current . ']'
-"    endif
-"
-"    " space-separate buffer names
-"    if i > 0
-"      let out = out . ' '
-"    endif
-"    let out = out . current
-"
-"    let i = i + 1
-"
-"  endwhile
-"
-"  return out
-"
-"endfunction
