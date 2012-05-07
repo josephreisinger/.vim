@@ -118,6 +118,12 @@ set tildeop
 
 set showcmd
 
+" Reselect visual block after indent/outdent
+vnoremap < <gv
+vnoremap > >gv
+
+" clear highlight after search
+noremap <silent><Leader>/ :nohls<CR>
 
 "autocmd BufRead,BufNewFile * highlight Folded guibg=#303030 guifg=lightgray
 "set foldtext=MyFoldText()
