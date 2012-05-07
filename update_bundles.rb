@@ -19,18 +19,20 @@ git_bundles = [
   "git://github.com/tpope/vim-fugitive.git",
   "git://github.com/tpope/vim-git.git",
   "git://github.com/tpope/vim-markdown.git",
-  "git://github.com/tpope/vim-repeat.git",
-  "git://github.com/tpope/vim-surround.git",
-  "git://github.com/tpope/vim-vividchalk.git",
-  "git://github.com/tsaleh/vim-matchit.git",
-  "git://github.com/tsaleh/vim-shoulda.git",
+  #"git://github.com/tpope/vim-repeat.git",
+  #"git://github.com/tpope/vim-surround.git",
+  #"git://github.com/tpope/vim-vividchalk.git",
+  #"git://github.com/tsaleh/vim-matchit.git",
+  #"git://github.com/tsaleh/vim-shoulda.git",
   "git://github.com/tsaleh/vim-tmux.git",
-  "git://github.com/vim-scripts/Gist.vim.git",
+  #"git://github.com/vim-scripts/Gist.vim.git",
   "git://github.com/kchmck/vim-coffee-script.git",
   "git://github.com/derekwyatt/vim-scala.git",
   "git://github.com/Lokaltog/vim-powerline.git",
   "git://github.com/scrooloose/nerdcommenter.git",
-  "git://github.com/scrooloose/syntastic.git"
+  "git://github.com/scrooloose/nerdcommenter.git",
+  "git://github.com/scrooloose/syntastic.git",
+  "git://github.com/altercation/vim-colors-solarized"
 ]
 
 vim_org_scripts = [
