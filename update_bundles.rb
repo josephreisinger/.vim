@@ -32,7 +32,8 @@ git_bundles = [
   "git://github.com/scrooloose/nerdcommenter.git",
   "git://github.com/scrooloose/nerdcommenter.git",
   "git://github.com/scrooloose/syntastic.git",
-  "git://github.com/altercation/vim-colors-solarized"
+  "git://github.com/altercation/vim-colors-solarized",
+  "git://github.com/vim-scripts/VimClojure"
 ]
 
 vim_org_scripts = [
