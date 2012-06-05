@@ -1,3 +1,12 @@
+" Init pathogen
+call pathogen#infect() 
+" filetype off
+" call pathogen#runtime_append_all_bundles()
+" call pathogen#helptags()
+
+
+
+
 set t_Co=256
 
 set noesckeys
@@ -6,7 +15,10 @@ set ttimeoutlen=250
 
 "set t_AB=^[[48;5;%dm
 "set t_AF=^[[38;5;%dm
-colorscheme joe
+let g:solarized_termcolors=256
+colorscheme solarized
+"set background=dark
+"colorscheme joe
 "colorscheme leo
 "
 " Keeps the goddammned tab completion sane
@@ -15,12 +27,6 @@ set wildmode=longest,list
 " Really helpful!
 map ,, :w<cr>
 map ,q :q<cr>
-
-" Init pathogen
-call pathogen#infect() 
-" filetype off
-" call pathogen#runtime_append_all_bundles()
-" call pathogen#helptags()
 
 " Pep8
 let g:pep8_map='<leader>8'
@@ -67,7 +73,8 @@ map <localleader>v :tabe ~/.vimrc<cr>:set noro<cr><c-l>
 map <localleader>V :so ~/.vimrc<cr>
 map <localleader>p :set invpaste \| set paste?<cr>
 
-set laststatus=2
+"set laststatus=2
+set laststatus=2 nocp rtp+=~/.vim/bundle/vim-powerline
 
 
 " moves all the vim backups somewhere nice
@@ -136,19 +143,19 @@ noremap <silent><Leader>/ :nohls<CR>
 
 syntax enable
 syntax sync fromstart
-filetype on                          " try to detect filetypes
+filetype on            " try to detect filetypes
 filetype plugin on     " enables filetype specific plugins
 filetype plugin indent on
 
 
-let g:explVertical=1
-let g:explStartRight=1
-let g:explSplitRight=1
-let g:explWinSize=""
+"let g:explVertical=1
+"let g:explStartRight=1
+"let g:explSplitRight=1
+"let g:explWinSize=""
 
-" Taglist Window Options
-let Tlist_Use_Right_Window=1
-let Tlist_Sort_Type = "name"
+"" Taglist Window Options
+"let Tlist_Use_Right_Window=1
+"let Tlist_Sort_Type = "name"
 
 if &diff
    set nowrap
