@@ -30,9 +30,9 @@ git_bundles = [
   "git://github.com/derekwyatt/vim-scala.git",
   "git://github.com/Lokaltog/vim-powerline.git",
   "git://github.com/scrooloose/nerdcommenter.git",
-  "git://github.com/scrooloose/nerdcommenter.git",
   "git://github.com/scrooloose/syntastic.git",
   "git://github.com/altercation/vim-colors-solarized",
+  "git://github.com/majutsushi/tagbar",
   "git://github.com/vim-scripts/VimClojure"
 ]
 

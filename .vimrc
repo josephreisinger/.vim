@@ -25,7 +25,7 @@ set hlsearch
 
 set laststatus=2 nocp rtp+=~/.vim/bundle/vim-powerline
 
-set colorcolumn=100
+"set colorcolumn=100
 
 " learn vim dammit
 nnoremap <up> <nop>
@@ -62,6 +62,8 @@ let mapleader = ","
 " :noh using ", "
 nnoremap <leader><space> :noh<cr>
 
+nmap <leader>t :TagbarToggle<CR>
+
 
 set t_Co=256
 
@@ -71,9 +73,10 @@ set ttimeoutlen=250
 
 "set t_AB=^[[48;5;%dm
 "set t_AF=^[[38;5;%dm
-let g:solarized_termcolors=256
-colorscheme solarized
-set background=dark
+"let g:solarized_termcolors=256
+"colorscheme solarized
+"set background=dark
+colorscheme molokai
 "colorscheme joe
 "colorscheme leo
 "
