@@ -1,10 +1,66 @@
 " Init pathogen
-call pathogen#infect() 
-" filetype off
-" call pathogen#runtime_append_all_bundles()
-" call pathogen#helptags()
+filetype off
+call pathogen#runtime_append_all_bundles()
+filetype plugin indent on
+
+set nocompatible
+set modelines=0
+
+set encoding=utf-8
+set scrolloff=3
+set ttyfast
+set hidden  " allow us to open other buffers without saving this one
+set wildmenu
+" Keeps the goddammned tab completion sane
+set wildmode=list:longest
+set cursorline
+set ruler
+set backspace=indent,eol,start
+"set relativenumber
+set undofile
+
+set incsearch
+set showmatch
+set hlsearch
+
+set laststatus=2 nocp rtp+=~/.vim/bundle/vim-powerline
+
+set colorcolumn=100
+
+" learn vim dammit
+nnoremap <up> <nop>
+nnoremap <down> <nop>
+nnoremap <left> <nop>
+nnoremap <right> <nop>
+inoremap <up> <nop>
+inoremap <down> <nop>
+inoremap <left> <nop>
+inoremap <right> <nop>
+nnoremap j gj
+nnoremap k gk
+
+" clever
+nnoremap ; :
+
+" oh, fuck yes. always save the fcuker
+au FocusLost * :wa
 
 
+
+" select pasted text
+" nnoremap <leader>v V`]
+
+
+" Fix vim's regexps
+nnoremap / /\v
+vnoremap / /\v
+set ignorecase
+set smartcase
+
+let mapleader = ","
+
+" :noh using ", "
+nnoremap <leader><space> :noh<cr>
 
 
 set t_Co=256
@@ -17,12 +73,10 @@ set ttimeoutlen=250
 "set t_AF=^[[38;5;%dm
 let g:solarized_termcolors=256
 colorscheme solarized
-"set background=dark
+set background=dark
 "colorscheme joe
 "colorscheme leo
 "
-" Keeps the goddammned tab completion sane
-set wildmode=longest,list
 
 " Really helpful!
 map ,, :w<cr>
@@ -73,9 +127,6 @@ map <localleader>v :tabe ~/.vimrc<cr>:set noro<cr><c-l>
 map <localleader>V :so ~/.vimrc<cr>
 map <localleader>p :set invpaste \| set paste?<cr>
 
-"set laststatus=2
-set laststatus=2 nocp rtp+=~/.vim/bundle/vim-powerline
-
 
 " moves all the vim backups somewhere nice
 silent execute '!mkdir -p ~/.vim_backups'
@@ -96,10 +147,7 @@ let g:syntastic_mode_map = { 'mode': 'active',
                            \ 'passive_filetypes': ['scala'] }
 let g:syntastic_enable_signs=1
 let g:syntastic_python_checker_args="--ignore=E501 --max-complexity=12"
- 
-set backspace=indent,eol,start
 
-set nocompatible
 set errorformat=%f:%l:%v:%*\\d:%*\\d:%*\\s%m
 set expandtab
 set foldmethod=manual
@@ -107,15 +155,11 @@ set foldenable
 "set formatoptions=cnroq
 "set guifont=Courier_New:h8
 "set guioptions=ar
-set incsearch
-set hlsearch
 set infercase
 set nojoinspaces
 "set printfont=Courier_New:h8
 "set printoptions=left:2pc,right:3pc,top:3pc,bottom:3pc,header:3,syntax:a,number:y
-set ruler
 set shiftwidth=4
-set showmatch
 set splitbelow
 set splitright
 set tabstop=4
