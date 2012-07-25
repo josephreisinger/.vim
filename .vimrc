@@ -3,7 +3,6 @@ filetype off
 call pathogen#runtime_append_all_bundles()
 filetype plugin indent on
 
-set nocompatible
 set modelines=0
 
 set encoding=utf-8
@@ -28,16 +27,16 @@ set laststatus=2 nocp rtp+=~/.vim/bundle/vim-powerline
 "set colorcolumn=100
 
 " learn vim dammit
-nnoremap <up> <nop>
-nnoremap <down> <nop>
-nnoremap <left> <nop>
-nnoremap <right> <nop>
-inoremap <up> <nop>
-inoremap <down> <nop>
-inoremap <left> <nop>
-inoremap <right> <nop>
-nnoremap j gj
-nnoremap k gk
+"nnoremap <up> <nop>
+"nnoremap <down> <nop>
+"nnoremap <left> <nop>
+"nnoremap <right> <nop>
+"inoremap <up> <nop>
+"inoremap <down> <nop>
+"inoremap <left> <nop>
+"inoremap <right> <nop>
+"nnoremap j gj
+"nnoremap k gk
 
 " clever
 nnoremap ; :
@@ -155,20 +154,13 @@ set errorformat=%f:%l:%v:%*\\d:%*\\d:%*\\s%m
 set expandtab
 set foldmethod=manual
 set foldenable
-"set formatoptions=cnroq
-"set guifont=Courier_New:h8
-"set guioptions=ar
 set infercase
 set nojoinspaces
-"set printfont=Courier_New:h8
-"set printoptions=left:2pc,right:3pc,top:3pc,bottom:3pc,header:3,syntax:a,number:y
 set shiftwidth=4
 set splitbelow
 set splitright
 set tabstop=4
-"set textwidth=80
 set tildeop
-
 
 set showcmd
 
@@ -179,15 +171,6 @@ vnoremap > >gv
 " clear highlight after search
 noremap <silent><Leader>/ :nohls<CR>
 
-"autocmd BufRead,BufNewFile * highlight Folded guibg=#303030 guifg=lightgray
-"set foldtext=MyFoldText()
-"function MyFoldText()
-"   let line = substitute(getline(v:foldstart), '/\*\|\*/\|{{{\d\=', '', 'g')
-"   return line . " (" . (v:foldend - v:foldstart) . " lines)"
-"endfunction
-
-"autocmd BufRead,BufNewFile * highlight Visual guifg=darkgray
-
 syntax enable
 syntax sync fromstart
 filetype on            " try to detect filetypes
@@ -195,16 +178,9 @@ filetype plugin on     " enables filetype specific plugins
 filetype plugin indent on
 
 
-"let g:explVertical=1
-"let g:explStartRight=1
-"let g:explSplitRight=1
-"let g:explWinSize=""
-
-"" Taglist Window Options
-"let Tlist_Use_Right_Window=1
-"let Tlist_Sort_Type = "name"
-
 if &diff
    set nowrap
 endif
 
+" has to be near the bottom for some reason :/
+set nocompatible
