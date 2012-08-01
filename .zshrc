@@ -61,26 +61,25 @@ unsetopt correct_all
 
 
 # http://unix.stackexchange.com/questions/16101/zsh-search-history-on-up-and-down-keys
-up-line-or-search-prefix () {
-  local CURSOR_before_search=$CURSOR
-  zle up-line-or-search "$LBUFFER"
-  CURSOR=$CURSOR_before_search
-}
-zle -N up-line-or-search-prefix
+#up-line-or-search-prefix () {
+  #local CURSOR_before_search=$CURSOR
+  #zle up-line-or-search "$LBUFFER"
+  #CURSOR=$CURSOR_before_search
+#}
+#zle -N up-line-or-search-prefix
 
-down-line-or-search-prefix () {
-  local CURSOR_before_search=$CURSOR
-  zle down-line-or-search "$LBUFFER"
-  CURSOR=$CURSOR_before_search
-}
-zle -N down-line-or-search-prefix
+#down-line-or-search-prefix () {
+  #local CURSOR_before_search=$CURSOR
+  #zle down-line-or-search "$LBUFFER"
+  #CURSOR=$CURSOR_before_search
+#}
+#zle -N down-line-or-search-prefix
 
 
 bindkey "^N" history-beginning-search-forward
 bindkey "^P" history-beginning-search-backward
-bindkey "^[[A" up-line-or-search-prefix
-bindkey "^[[B" down-line-or-search-prefix
+#bindkey "^[[A" up-line-or-search-prefix
+#bindkey "^[[B" down-line-or-search-prefix
 
-# fails weirdly here but works for ^N ?
-#bindkey "^[[A" history-beginning-search-forward
-#bindkey "^[[B" history-beginning-search-backward
+bindkey '\e[A' history-beginning-search-backward
+bindkey '\e[B' history-beginning-search-forward

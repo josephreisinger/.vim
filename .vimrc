@@ -24,6 +24,7 @@ set hlsearch
 
 set laststatus=2 nocp rtp+=~/.vim/bundle/vim-powerline
 
+
 "set colorcolumn=100
 
 " learn vim dammit
@@ -66,9 +67,11 @@ nmap <leader>t :TagbarToggle<CR>
 
 set t_Co=256
 
+" Shorten timeout
 set noesckeys
-set ttimeout 
-set ttimeoutlen=250
+set nottimeout 
+" set ttimeoutlen=250
+" set ttimeoutlen=0
 
 "set t_AB=^[[48;5;%dm
 "set t_AF=^[[38;5;%dm
