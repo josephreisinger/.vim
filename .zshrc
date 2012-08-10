@@ -9,9 +9,9 @@ ZSH=$HOME/.oh-my-zsh
 # ZSH_THEME="dpoggi"
 # ZSH_THEME="jreese"
 # ZSH_THEME="lambda"
-# ZSH_THEME="mh"
-ZSH_THEME="minimal"
+ZSH_THEME="mh"
 # ZSH_THEME="muse"
+# ZSH_THEME="minimal"
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -30,7 +30,7 @@ ZSH_THEME="minimal"
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment following line if you want red dots to be displayed while waiting for completion
-COMPLETION_WAITING_DOTS="true"
+# COMPLETION_WAITING_DOTS="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
@@ -52,8 +52,11 @@ export PATH=/opt/local/bin:/opt/local/sbin:/opt/local/bin:/opt/local/sbin:/opt/l
 export PATH=$PATH:/usr/local/sbin
 
 # for julia
-export DYLD_LIBRARY_PATH=/usr/local/gfortran/lib
+# export DYLD_LIBRARY_PATH=/usr/local/gfortran/lib
 
+
+# for mvyn
+export PATH=$PATH:~/Desktop/premise/dev/commons/src/main/unix/
 
 setopt autolist
 unsetopt menucomplete

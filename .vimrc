@@ -58,6 +58,7 @@ set ignorecase
 set smartcase
 
 let mapleader = ","
+let maplocalleader = ","
 
 " :noh using ", "
 nnoremap <leader><space> :noh<cr>
@@ -102,7 +103,6 @@ cmap w!! %!sudo tee > /dev/null %
 set viminfo='10,\"100,:20,%,n~/.viminfo 
     au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif 
 
-let maplocalleader = ","
 
 " Stuff from Dan
 " ack
@@ -140,9 +140,6 @@ set directory=~/.vim_backups//
 
 " set paste
 set autoindent
-
-let mapleader = ","
-let localmapleader = ","
 
 " For syntastic
 let g:syntastic_check_on_open=1
