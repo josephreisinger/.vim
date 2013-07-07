@@ -46,7 +46,7 @@ alias ls='gls --color=tty -F -s -h'
 alias l='ls'
 
 # Customize to your needs...
-export PATH=/opt/local/bin:/opt/local/sbin:/opt/local/bin:/opt/local/sbin:/opt/local/bin:/opt/local/sbin:/opt/local/bin:/opt/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/texbin:/projects/nn/joeraii/local_libraries/bin/:/public/linux/bin/:/lusr/git/bin/:~/Desktop/metamx/unix-common/bin/
+export PATH=/opt/local/bin:/opt/local/sbin:/opt/local/bin:/opt/local/sbin:/opt/local/bin:/opt/local/sbin:/opt/local/bin:/opt/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/texbin:/usr/local/share/python/
 
 # for rabbitmiq
 export PATH=$PATH:/usr/local/sbin
@@ -58,10 +58,20 @@ export PATH=$PATH:/usr/local/sbin
 # for mvyn
 export PATH=$PATH:~/Desktop/premise/dev/commons/src/main/unix/
 
+# for ruby 1.9
+# export PATH=/usr/local/Cellar/ruby/1.9.3-p194/bin:$PATH
+export PATH=/usr/local/Cellar/ruby/2.0.0-p247/bin:$PATH
+
+# for scala interpreter
+export JAVA_OPTS="-Dfile.encoding=UTF-8"
+
 setopt autolist
 unsetopt menucomplete
 unsetopt correct_all
 
+
+# put local first
+export PATH=/usr/local/bin:~/:$PATH
 
 # http://unix.stackexchange.com/questions/16101/zsh-search-history-on-up-and-down-keys
 #up-line-or-search-prefix () {
@@ -86,3 +96,9 @@ bindkey "^P" history-beginning-search-backward
 
 bindkey '\e[A' history-beginning-search-backward
 bindkey '\e[B' history-beginning-search-forward
+
+# pretty git log
+alias gl='git log --decorate --graph --pretty=my-oneline -50'
+
+# aj
+[[ -s `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh

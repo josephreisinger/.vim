@@ -28,12 +28,17 @@ git_bundles = [
   #"git://github.com/vim-scripts/Gist.vim.git",
   "git://github.com/kchmck/vim-coffee-script.git",
   "git://github.com/derekwyatt/vim-scala.git",
-  "git://github.com/Lokaltog/vim-powerline.git",
+  # XXX: I really want this!!!!
+  #V"git://github.com/Lokaltog/vim-powerline.git",
   "git://github.com/scrooloose/nerdcommenter.git",
   "git://github.com/scrooloose/syntastic.git",
   "git://github.com/altercation/vim-colors-solarized",
   "git://github.com/majutsushi/tagbar",
-  "git://github.com/vim-scripts/VimClojure"
+  "git://github.com/vim-scripts/VimClojure",
+  "git://github.com/juvenn/mustache.vim.git",
+  "git://github.com/Shougo/unite.vim.git",
+  "git://github.com/digitaltoad/vim-jade.git",
+  "git://github.com/Shougo/vimproc.vim.git"
 ]
 
 vim_org_scripts = [

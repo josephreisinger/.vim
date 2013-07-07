@@ -24,6 +24,8 @@ set hlsearch
 
 set laststatus=2 nocp rtp+=~/.vim/bundle/vim-powerline
 
+" like ctrl-p
+nnoremap <C-p> :Unite file_rec/async<cr>
 
 "set colorcolumn=100
 
@@ -72,7 +74,7 @@ set t_Co=256
 set noesckeys
 set nottimeout 
 " set ttimeoutlen=250
-" set ttimeoutlen=0
+set ttimeoutlen=1
 
 "set t_AB=^[[48;5;%dm
 "set t_AF=^[[38;5;%dm
@@ -146,7 +148,7 @@ let g:syntastic_check_on_open=1
 let g:syntastic_enable_highlighting = 1
 let g:syntastic_mode_map = { 'mode': 'active',
                            \ 'active_filetypes': ['python'],
-                           \ 'passive_filetypes': ['scala'] }
+                           \ 'passive_filetypes': ['scala', 'html', 'java'] }
 let g:syntastic_enable_signs=1
 let g:syntastic_python_checker_args="--ignore=E501 --max-complexity=12"
 
