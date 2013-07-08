@@ -15,6 +15,22 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundle 'Shougo/vimproc'
 NeoBundle 'Shougo/unite.vim'
 
+NeoBundle 'Shougo/neocomplete'
+" Use neocomplete.
+let g:neocomplete#enable_at_startup = 1
+" Use smartcase.
+let g:neocomplete#enable_smart_case = 1
+" <TAB>: completion.
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+" <CR>: close popup and save indent.
+inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+function! s:my_cr_function()
+  " return neocomplete#smart_close_popup() . "\<CR>"
+  " For no inserting <CR> key.
+  return pumvisible() ? neocomplete#close_popup() : "\<CR>"
+endfunction
+
+
 
 " NeoBundle 'git://github.com/astashov/vim-ruby-debugger.git'
 " NeoBundle 'git://github.com/hallison/vim-rdoc.git'
@@ -27,7 +43,7 @@ NeoBundle 'Shougo/unite.vim'
 " NeoBundle 'git://github.com/tsaleh/taskpaper.vim.git'
 " NeoBundle 'git://github.com/tsaleh/vim-tcomment.git'
 " NeoBundle 'git://github.com/vim-ruby/vim-ruby.git'
-NeoBundle 'git://github.com/ervandew/supertab.git'
+" NeoBundle 'git://github.com/ervandew/supertab.git'
 "NeoBundle 'git://github.com/kana/vim-smartinput.git'
 NeoBundle 'git://github.com/godlygeek/tabular.git'
 NeoBundle 'git://github.com/tpope/vim-fugitive.git'
@@ -196,17 +212,19 @@ nmap <leader>t :TagbarToggle<CR>
 set t_Co=256
 
 " Shorten timeout
-set noesckeys
+" set noesckeys  " breaks arrow keys in insert mode
 set nottimeout 
 " set ttimeoutlen=250
 set ttimeoutlen=1
 
 "set t_AB=^[[48;5;%dm
 "set t_AF=^[[38;5;%dm
-let g:solarized_termcolors=256
-colorscheme solarized
-set background=dark
-" colorscheme molokai
+"
+"let g:solarized_termcolors=256
+"colorscheme solarized
+"set background=dark
+
+colorscheme molokai
 "colorscheme joe
 "colorscheme leo
 "
@@ -228,7 +246,7 @@ cmap w!! %!sudo tee > /dev/null %
 
 " Restore the last line we were working on and also marks
 set viminfo='10,\"100,:20,%,n~/.viminfo 
-    au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif 
+    "au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif 
 
 
 " Stuff from Dan
@@ -293,7 +311,7 @@ filetype plugin indent on
 
 
 if &diff
-   set nowrap
+   "set nowrap
 endif
 
 " has to be near the bottom for some reason :/
