@@ -2,3 +2,5 @@
 bundle/
 colors/
 .netrwhist
+
+.cache
