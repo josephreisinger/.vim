@@ -30,7 +30,6 @@ NeoBundle 'Shougo/unite.vim'
 NeoBundle 'git://github.com/ervandew/supertab.git'
 "NeoBundle 'git://github.com/kana/vim-smartinput.git'
 NeoBundle 'git://github.com/godlygeek/tabular.git'
-NeoBundle 'git://github.com/pangloss/vim-javascript.git'
 NeoBundle 'git://github.com/tpope/vim-fugitive.git'
 NeoBundle 'git://github.com/tpope/vim-git.git'
 NeoBundle 'git://github.com/tpope/vim-markdown.git'
@@ -39,50 +38,60 @@ NeoBundle 'git://github.com/tpope/vim-markdown.git'
 "NeoBundle 'git://github.com/tpope/vim-vividchalk.git'
 "NeoBundle 'git://github.com/tsaleh/vim-matchit.git'
 "NeoBundle 'git://github.com/tsaleh/vim-shoulda.git'
-NeoBundle 'git://github.com/tsaleh/vim-tmux.git'
+"NeoBundle 'git://github.com/tsaleh/vim-tmux.git'
 "NeoBundle 'git://github.com/vim-scripts/Gist.vim.git'
 " NeoBundle 'git://github.com/kchmck/vim-coffee-script.git'
-NeoBundle 'git://github.com/derekwyatt/vim-scala.git'
 " XXX: I really want this!!!!
 " NeoBundle 'git://github.com/Lokaltog/powerline.git'
-NeoBundle 'git://github.com/Lokaltog/vim-powerline.git'
+"NeoBundle 'git://github.com/Lokaltog/vim-powerline.git'
 NeoBundle 'git://github.com/scrooloose/nerdcommenter.git'
+
+" For syntastic
 NeoBundle 'git://github.com/scrooloose/syntastic.git'
+let g:syntastic_check_on_open=1
+let g:syntastic_enable_highlighting = 1
+let g:syntastic_mode_map = { 'mode': 'active',
+                           \ 'active_filetypes': ['python'],
+                           \ 'passive_filetypes': ['scala', 'html', 'java'] }
+let g:syntastic_enable_signs=1
+let g:syntastic_python_checker_args="--ignore=E501 --max-complexity=12"
+let g:syntastic_error_symbol = '✗'
+let g:syntastic_style_error_symbol = '✠'
+let g:syntastic_warning_symbol = '∆'
+let g:syntastic_style_warning_symbol = '≈'
+
 NeoBundle 'git://github.com/altercation/vim-colors-solarized'
 NeoBundle 'git://github.com/majutsushi/tagbar'
-" NeoBundle 'git://github.com/vim-scripts/VimClojure'
-"NeoBundle 'git://github.com/juvenn/mustache.vim.git'
-NeoBundle 'git://github.com/digitaltoad/vim-jade.git'
-NeoBundle 'git://github.com/nathanaelkane/vim-indent-guides.git'
 
-" My Bundles here:
-"
-" Note: You don't set neobundle setting in .gvimrc!
-" Original repos on github
-" NeoBundle 'tpope/vim-fugitive'
-" NeoBundle 'Lokaltog/vim-easymotion'
-" NeoBundle 'rstacruz/sparkup', {'rtp': 'vim/'}
-" vim-scripts repos
-" NeoBundle 'L9'
-" NeoBundle 'FuzzyFinder'
-" NeoBundle 'rails.vim'
-" Non github repos
-" NeoBundle 'git://git.wincent.com/command-t.git'
-" gist repos
-" NeoBundle 'gist:Shougo/656148', {
-"       \ 'name': 'everything.vim',
-"      \ 'script_type': 'plugin'}
-" Non git repos
-"NeoBundle 'http://svn.macports.org/repository/macports/contrib/mpvim/'
-"NeoBundle 'https://bitbucket.org/ns9tks/vim-fuzzyfinder'
+" indent guide
+NeoBundle 'git://github.com/nathanaelkane/vim-indent-guides.git'
+let g:indent_guides_auto_colors = 0
+let g:indent_guides_start_level = 2
+let g:indent_guides_guide_size = 1
+let g:indent_guides_enable_on_vim_startup=1
+let g:indent_guides_color_change_percent=3
+"autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=black
+"autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=darkgrey
+function! s:indent_set_console_colors()
+    hi IndentGuidesOdd ctermbg=235
+    hi IndentGuidesEven ctermbg=236
+endfunction
+autocmd VimEnter,Colorscheme * call s:indent_set_console_colors()
+
+NeoBundleLazy 'git://github.com/derekwyatt/vim-scala.git', {'autoload':{'filetypes':['scala']}}
+NeoBundleLazy 'groenewege/vim-less', {'autoload':{'filetypes':['less']}}
+NeoBundleLazy 'git://github.com/pangloss/vim-javascript.git', {'autoload':{'filetypes':['js', 'js.erb']}}
+NeoBundleLazy 'ap/vim-css-color', {'autoload':{'filetypes':['css','scss','sass','less','styl']}}
+NeoBundleLazy 'othree/html5.vim', {'autoload':{'filetypes':['html']}}
+"NeoBundleLazy 'klen/python-mode', {'autoload':{'filetypes':['python']}}
+"let g:pymode_rope=0
+"let g:pymode_lint = 1
+"let g:pymode_lint_checker = "pyflakes,pep8,mccabe"
+"let g:pymode_lint_onfly = 1
+"let g:pymode_folding = 0
 
 
 filetype plugin indent on     " Required!
-"
-" Brief help
-" :NeoBundleList          - list configured bundles
-" :NeoBundleInstall(!)    - install(update) bundles
-" :NeoBundleClean(!)      - confirm(or auto-approve) removal of unused bundles
 
 " Installation check.
 NeoBundleCheck
@@ -124,24 +133,11 @@ set directory=~/.vim/.cache/swap
 set noswapfile
 
 
-
-"
-
-set incsearch
-set showmatch
-set hlsearch
-
 set laststatus=2 nocp rtp+=~/.vim/bundle/vim-powerline
 
 let mapleader = ","
 let maplocalleader = ","
 
-" indent guide colors
-let g:indent_guides_auto_colors = 0
-let g:indent_guides_start_level = 2
-let g:indent_guides_guide_size = 1
-autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=black
-autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=darkgrey
 
 
 " like ctrl-p
@@ -178,10 +174,18 @@ au FocusLost * :wa
 
 
 " Fix vim's regexps
-nnoremap / /\v
-vnoremap / /\v
+"nnoremap / /\v
+"vnoremap / /\v
+"nnoremap ? ?\v
+"vnoremap ? ?\v
+"cnoremap s/ s/\v
 set ignorecase
 set smartcase
+
+set incsearch
+set showmatch
+set hlsearch
+
 
 " :noh using ", "
 nnoremap <leader><space> :noh<cr>
@@ -199,10 +203,10 @@ set ttimeoutlen=1
 
 "set t_AB=^[[48;5;%dm
 "set t_AF=^[[38;5;%dm
-"let g:solarized_termcolors=256
-"colorscheme solarized
-"set background=dark
-colorscheme molokai
+let g:solarized_termcolors=256
+colorscheme solarized
+set background=dark
+" colorscheme molokai
 "colorscheme joe
 "colorscheme leo
 "
@@ -259,14 +263,6 @@ map <localleader>p :set invpaste \| set paste?<cr>
 " set paste
 set autoindent
 
-" For syntastic
-let g:syntastic_check_on_open=1
-let g:syntastic_enable_highlighting = 1
-let g:syntastic_mode_map = { 'mode': 'active',
-                           \ 'active_filetypes': ['python'],
-                           \ 'passive_filetypes': ['scala', 'html', 'java'] }
-let g:syntastic_enable_signs=1
-let g:syntastic_python_checker_args="--ignore=E501 --max-complexity=12"
 
 set errorformat=%f:%l:%v:%*\\d:%*\\d:%*\\s%m
 set expandtab
@@ -301,4 +297,4 @@ if &diff
 endif
 
 " has to be near the bottom for some reason :/
-set nocompatible
+" set nocompatible
